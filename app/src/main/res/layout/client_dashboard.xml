@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|top"
             android:orientation="horizontal"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="40dp"
             android:gravity="center_vertical">
 
             <ImageView
@@ -58,7 +58,7 @@
             android:layout_width="280dp"
             android:layout_height="230dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="110dp"
             android:layout_gravity="top|left"
             android:background="@drawable/card_background">
 
@@ -155,19 +155,19 @@
         <FrameLayout
             android:id="@+id/container_library"
             android:layout_width="280dp"
-            android:layout_height="230dp"
+            android:layout_height="260dp"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="400dp"
+            android:layout_marginTop="350dp"
             android:layout_gravity="top|left"
             android:background="@drawable/card_background">
 
             <TextView
                 android:id="@+id/text_browse_legal_templates"
-                android:layout_width="123dp"
+                android:layout_width="125dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="top|left"
                 android:layout_marginLeft="145dp"
-                android:layout_marginTop="108dp"
+                android:layout_marginTop="70dp"
                 android:gravity="left|top"
                 android:includeFontPadding="false"
                 android:lineHeight="22dp"
@@ -180,7 +180,7 @@
                 android:layout_width="240dp"
                 android:layout_height="44dp"
                 android:layout_marginLeft="26dp"
-                android:layout_marginTop="195dp"
+                android:layout_marginTop="210dp"
                 android:layout_gravity="top|left"
                 android:background="@drawable/container_button">
 
