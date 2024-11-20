@@ -33,7 +33,7 @@ class DrawerHandler(private val context: Context) {
             drawerLayout.openDrawer(GravityCompat.START)
         }
 
-       val lawyerMatchingContainer: View = context.findViewById(R.id.container_matching)
+        val lawyerMatchingContainer: View = context.findViewById(R.id.container_matching)
         lawyerMatchingContainer.setOnClickListener {
             LawyerMatchingHandler(context).setupLawyerMatchingScreen()
         }

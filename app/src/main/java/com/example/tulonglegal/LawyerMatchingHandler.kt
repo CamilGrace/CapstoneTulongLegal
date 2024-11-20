@@ -7,7 +7,7 @@ class LawyerMatchingHandler(private val context: Context) {
     fun setupLawyerMatchingScreen() {
         (context as MainActivity).setContentView(R.layout.lawyer_matching)
 
-        val backButton: View = context.findViewById(R.id.imageBackArrow)
+        val backButton: View = context.findViewById(R.id.imageBack)
         backButton.setOnClickListener {
             DrawerHandler(context).setupDrawer()
         }
