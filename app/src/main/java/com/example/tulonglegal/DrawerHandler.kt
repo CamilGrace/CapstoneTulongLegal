@@ -7,6 +7,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class DrawerHandler(private val context: Context) {
+
+    private var selectedItemId: Int = R.id.home // default item
+
     fun setupDrawer() {
         (context as MainActivity).setContentView(R.layout.client_dashboard)
 
@@ -15,7 +18,7 @@ class DrawerHandler(private val context: Context) {
         val bottomNavigationView: BottomNavigationView = context.findViewById(R.id.bottomNavigationView)
 
         drawerLayout.closeDrawers()
-        bottomNavigationView.selectedItemId = R.id.home
+        bottomNavigationView.selectedItemId = selectedItemId
 
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {

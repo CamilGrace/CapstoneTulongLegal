@@ -5,13 +5,14 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
 class RegistrationHandler(private val context: Context) {
-    private val activity = context as AppCompatActivity // Explicitly cast context to AppCompatActivity
+    private val activity = context as AppCompatActivity
 
     fun showRegistrationScreen() {
-        activity.setContentView(R.layout.user_registration) // Use activity instead of context
+        activity.setContentView(R.layout.user_registration)
 
         val backButton: View = activity.findViewById(R.id.imageBackArrow)
         backButton.setOnClickListener {
+            // Go back to login screen
             LoginHandler(activity).setupLoginScreen()
         }
 

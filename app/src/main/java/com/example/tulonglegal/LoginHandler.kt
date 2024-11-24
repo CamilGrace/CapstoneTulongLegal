@@ -1,6 +1,7 @@
 package com.example.tulonglegal
 
 import android.content.Context
+import android.content.Intent
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -12,12 +13,16 @@ class LoginHandler(private val context: Context) {
 
         val lawyerLogin: TextView = context.findViewById(R.id.lawyer_login)
         lawyerLogin.setOnClickListener {
-            context.setContentView(R.layout.lawyer_login)
+            // Start the LawyerLoginActivity when clicked
+            val intent = Intent(context, LawyerLoginActivity::class.java)
+            context.startActivity(intent)
         }
 
         val signUpText: TextView = context.findViewById(R.id.signup_text)
         signUpText.setOnClickListener {
-            RegistrationHandler(context).showRegistrationScreen()
+            // Start the RegistrationActivity when clicked
+            val intent = Intent(context, RegistrationActivity::class.java)
+            context.startActivity(intent)
         }
 
         val emailEditText: EditText = context.findViewById(R.id.username_edit_text)

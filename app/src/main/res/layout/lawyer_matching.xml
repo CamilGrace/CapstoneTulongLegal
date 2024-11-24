@@ -1,343 +1,369 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/matching_bg"
-    tools:context=".MainActivity">
+    >
 
-    <!-- ScrollView containing a single LinearLayout as its child -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigationView">
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/bottomNavigationView">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_height="wrap_content">
 
-            <!-- First FrameLayout -->
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imageBack"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/image_arrow_back" />
+
+            <LinearLayout
+                android:id="@+id/linear_lawyer_matching"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="80dp"
+                android:gravity="center_vertical"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
                 <ImageView
-                    android:id="@+id/imageBackArrow"
-                    android:layout_width="29dp"
-                    android:layout_height="26dp"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginStart="16dp"
-                    app:srcCompat="@drawable/image_arrow_back" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal|top"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="80dp"
-                    android:gravity="center_vertical">
-
-                    <ImageView
-                        android:id="@+id/img_screenshot_removebg_preview"
-                        android:layout_width="28dp"
-                        android:layout_height="28dp"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/img_matching" />
-
-                    <TextView
-                        android:id="@+id/text_tulong_legal"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:gravity="center_vertical"
-                        android:includeFontPadding="false"
-                        android:lineHeight="39.01dp"
-                        android:text="Lawyer Matching"
-                        android:textColor="#FFFBFBFB"
-                        android:textSize="30sp" />
-                </LinearLayout>
-            </FrameLayout>
-
-            <!-- Second FrameLayout -->
-            <FrameLayout
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/card_background">
+                    android:id="@+id/img_matching"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/img_matching" />
 
                 <TextView
-                    android:id="@+id/legal_category"
+                    android:id="@+id/text_lawyer_matching"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="top|start"
-                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center_vertical"
+                    android:includeFontPadding="false"
+                    android:lineHeight="39.01dp"
+                    android:text="Lawyer Matching"
+                    android:textColor="#FFFBFBFB"
+                    android:textSize="30sp" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/frame_card"
+                android:layout_width="320dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/card_background"
+                app:layout_constraintTop_toBottomOf="@id/linear_lawyer_matching"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/text_legal_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="16dp"
                     android:text="Legal Category"
                     android:textColor="#FF01212E"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="26dp"
-                    android:layout_marginLeft="26dp"/>
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-                <Spinner
-                    android:id="@+id/spinnerLegalCategory"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="45dp"
-                    android:layout_marginBottom="30dp"
-                    android:layout_gravity="center"
-                    android:spinnerMode="dropdown"
-                    android:contentDescription="Select a category"
-                    android:padding="8dp" />
+                    <Spinner
+                        android:id="@+id/spinnerLegalCategory"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_gravity="center"
+                        android:spinnerMode="dropdown"
+                        android:contentDescription="Select a category"
+                        app:layout_constraintTop_toBottomOf="@id/text_legal_category"
+                        app:layout_constraintStart_toStartOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </FrameLayout>
 
-            <!-- Third FrameLayout -->
             <FrameLayout
-                android:layout_width="350dp"
+                android:id="@+id/frame_card2"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/card_background">
+                android:layout_marginTop="16dp"
+                android:background="@drawable/card_background"
+                app:layout_constraintTop_toBottomOf="@id/frame_card"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
 
-                <!-- Label for Additional Details -->
-                <TextView
-                    android:id="@+id/AdditionalDetails"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top|start"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="Additional Details"
-                    android:textColor="#FF01212E"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="26dp" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <!-- EditText Positioned Under the Label -->
-                <EditText
-                    android:id="@+id/editTextAdditionalDetails"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top|start"
-                    android:layout_marginStart="26dp"
-                    android:layout_marginTop="50dp"
-                    android:hint="Describe your case details here..."
-                    android:textColor="@color/black"
-                    android:inputType="textMultiLine"
-                    android:minHeight="100dp"
-                    android:gravity="top|start" />
-
-                <!-- Preferred Lawyer Section -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Preferred Lawyer"
-                    android:layout_marginTop="150dp"
-                    android:layout_marginStart="26dp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="18dp" />
-
-                <!-- Gender Label -->
-                <TextView
-                    android:id="@+id/ViewGender"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Gender:"
-                    android:layout_marginTop="180dp"
-                    android:layout_marginStart="26dp"
-                    android:textStyle="bold"
-                    android:textSize="15dp" />
-
-                <!-- Gender RadioGroup -->
-                <RadioGroup
-                    android:id="@+id/GroupGender"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="195dp"
-                    android:layout_marginStart="26dp">
-
-                    <RadioButton
-                        android:id="@+id/Female"
+                    <TextView
+                        android:id="@+id/text_additional_details"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Female" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="16dp"
+                        android:text="Additional Details"
+                        android:textColor="#FF01212E"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-                    <RadioButton
-                        android:id="@+id/Male"
+                    <EditText
+                        android:id="@+id/editTextAdditionalDetails"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="vertical"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="0dp"
+                        android:hint="Describe your case details here..."
+                        android:textColor="@color/black"
+                        android:inputType="textMultiLine"
+                        android:minHeight="100dp"
+                        android:gravity="top|start"
+                        app:layout_constraintTop_toBottomOf="@id/text_additional_details"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/textPreferredLawyer"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Male" />
+                        android:text="Preferred Lawyer"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="26dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        app:layout_constraintTop_toBottomOf="@id/editTextAdditionalDetails"
+                        app:layout_constraintStart_toStartOf="parent"/>
 
-                    <RadioButton
-                        android:id="@+id/Any"
+                    <TextView
+                        android:id="@+id/ViewGender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Any" />
-                </RadioGroup>
+                        android:text="Gender:"
+                        android:layout_marginStart="26dp"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        app:layout_constraintTop_toBottomOf="@id/textPreferredLawyer"
+                        app:layout_constraintStart_toStartOf="parent"/>
 
-                <!-- Years of Expertise Section -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Years of Expertise:"
-                    android:layout_marginTop="240dp"
-                    android:layout_marginStart="26dp"
-                    android:textStyle="bold"
-                    android:textSize="15dp" />
-
-                <RadioGroup
-                    android:id="@+id/GroupYearsOfExpertise"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="260dp"
-                    android:layout_marginStart="26dp">
-
-                    <RadioButton
-                        android:id="@+id/LessThan5"
+                    <RadioGroup
+                        android:id="@+id/GroupGender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Less than 5 years" />
+                        android:orientation="horizontal"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="26dp"
+                        app:layout_constraintTop_toBottomOf="@id/ViewGender"
+                        app:layout_constraintStart_toStartOf="parent">
 
-                    <RadioButton
-                        android:id="@+id/Years5To10"
+                        <RadioButton
+                            android:id="@+id/Female"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Female" />
+
+                        <RadioButton
+                            android:id="@+id/Male"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Male" />
+
+                        <RadioButton
+                            android:id="@+id/Any"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Any" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/yearsOfExpertise"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="5-10 years" />
+                        android:text="Years of Expertise:"
+                        android:layout_marginStart="26dp"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        app:layout_constraintTop_toBottomOf="@id/GroupGender"
+                        app:layout_constraintStart_toStartOf="parent"/>
 
-                    <RadioButton
-                        android:id="@+id/Years10To15"
+                    <RadioGroup
+                        android:id="@+id/GroupYearsOfExpertise"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="10-15 years" />
+                        android:orientation="vertical"
+                        android:layout_marginStart="26dp"
+                        app:layout_constraintTop_toBottomOf="@id/yearsOfExpertise"
+                        app:layout_constraintStart_toStartOf="parent">
 
-                    <RadioButton
-                        android:id="@+id/Years15AndAbove"
+                        <RadioButton
+                            android:id="@+id/LessThan5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Less than 5 years" />
+
+                        <RadioButton
+                            android:id="@+id/Years5To10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="5-10 years" />
+
+                        <RadioButton
+                            android:id="@+id/Years10To15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10-15 years" />
+
+                        <RadioButton
+                            android:id="@+id/Years15AndAbove"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="15 years and above" />
+
+                        <RadioButton
+                            android:id="@+id/AnyYears"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Any" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/consultationFee"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="15 years and above" />
+                        android:text="Consultation Fee:"
+                        android:layout_marginStart="26dp"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        app:layout_constraintTop_toBottomOf="@id/GroupYearsOfExpertise"
+                        app:layout_constraintStart_toStartOf="parent"/>
 
-                    <RadioButton
-                        android:id="@+id/AnyYears"
+                    <RadioGroup
+                        android:id="@+id/GroupConsultationFee"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Any" />
-                </RadioGroup>
+                        android:orientation="vertical"
+                        android:layout_marginStart="26dp"
+                        app:layout_constraintTop_toBottomOf="@id/consultationFee"
+                        app:layout_constraintStart_toStartOf="parent">
 
-                <!-- Consultation Fee Section -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Consultation Fee:"
-                    android:layout_marginTop="500dp"
-                    android:layout_marginStart="26dp"
-                    android:textStyle="bold"
-                    android:textSize="15dp" />
+                        <RadioButton
+                            android:id="@+id/Free"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Free" />
 
-                <RadioGroup
-                    android:id="@+id/GroupConsultationFee"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="520dp"
-                    android:layout_marginStart="26dp">
+                        <RadioButton
+                            android:id="@+id/Fee100To500"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="100-500" />
 
-                    <RadioButton
-                        android:id="@+id/Free"
+                        <RadioButton
+                            android:id="@+id/Fee500To1000"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="500-1000" />
+
+                        <RadioButton
+                            android:id="@+id/Fee1000Plus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1000+" />
+
+                        <RadioButton
+                            android:id="@+id/AnyFee"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Any amount" />
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/availability"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Free" />
+                        android:text="Availability:"
+                        android:layout_marginStart="26dp"
+                        android:textStyle="bold"
+                        android:textSize="15dp"
+                        app:layout_constraintTop_toBottomOf="@id/GroupConsultationFee"
+                        app:layout_constraintStart_toStartOf="parent"/>
 
-                    <RadioButton
-                        android:id="@+id/Fee100To500"
+                    <RadioGroup
+                        android:id="@+id/GroupAvailability"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="100-500" />
+                        android:orientation="vertical"
+                        android:layout_marginStart="26dp"
+                        app:layout_constraintTop_toBottomOf="@id/availability"
+                        app:layout_constraintStart_toStartOf="parent">
 
-                    <RadioButton
-                        android:id="@+id/Fee500To1000"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="500-1000" />
+                        <RadioButton
+                            android:id="@+id/AvailableNow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Available now"
+                            app:layout_constraintTop_toBottomOf="@id/GroupAvailability"
+                            app:layout_constraintStart_toStartOf="parent"/>
 
-                    <RadioButton
-                        android:id="@+id/Fee1000Plus"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="1000+" />
+                        <RadioButton
+                            android:id="@+id/Within24Hours"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Available within 24 hours" />
 
-                    <RadioButton
-                        android:id="@+id/AnyFee"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Any amount" />
-                </RadioGroup>
+                        <RadioButton
+                            android:id="@+id/AnyTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Anytime" />
+                    </RadioGroup>
 
-                <!-- Availability Section -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Availability:"
-                    android:layout_marginTop="760dp"
-                    android:layout_marginStart="26dp"
-                    android:textStyle="bold"
-                    android:textSize="15dp" />
-
-                <RadioGroup
-                    android:id="@+id/GroupAvailability"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="780dp"
-                    android:layout_marginStart="26dp">
-
-                    <RadioButton
-                        android:id="@+id/AvailableNow"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Available now" />
-
-                    <RadioButton
-                        android:id="@+id/Within24Hours"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Available within 24 hours" />
-
-                    <RadioButton
-                        android:id="@+id/AnyTime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Anytime" />
-                </RadioGroup>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </FrameLayout>
 
             <Button
                 android:id="@+id/btnFindMyLawyer"
-                android:layout_width="360dp"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="80dp"
                 android:backgroundTint="#018E61"
                 android:padding="16dp"
                 android:text="Find My Lawyer"
                 android:textColor="#FFFFFF"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:textSize="18sp" />
-        </LinearLayout>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/frame_card2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
-
-    <!-- Bottom Navigation Bar fixed at the bottom -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
@@ -348,5 +374,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
