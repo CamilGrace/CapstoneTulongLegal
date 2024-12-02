@@ -11,18 +11,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TULONGLEGAL"
         tools:targetApi="31">
+
+        <!-- MainActivity with launcher intent -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".LawyerLoginActivity" />
-        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".LawyerLoginActivity"/>
+        <activity android:name=".RoleRegistrationActivity" />
+        <activity android:name=".ClientRegistrationActivity" />
+        <activity android:name=".LawyerRegistrationActivity" />
+        <activity android:name=".ClientDashboardActivity" />
+        <activity android:name=".ClientSettingsActivity" />
+        <activity android:name=".ClientProfileActivity" />
+        <activity android:name=".LawyerMatchingActivity" />
+
+
 
     </application>
 
