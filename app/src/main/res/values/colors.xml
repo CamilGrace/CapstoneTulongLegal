@@ -3,4 +3,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_gray">#D0CECE</color>
+    <color name="light_green">#8BE98B</color>'
+
+    <color name="green_selected">#4CAF50</color> <!-- Adjust the shade of green as needed -->
+    <color name="default_icon_color">#757575</color> <!-- Default icon color -->
+
 </resources>
